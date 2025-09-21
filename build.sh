@@ -2,7 +2,7 @@
 
 # 定义变量
 PROJECT_NAME="iptv-download"
-REPO_URL="https://github.com/dwtxaqgb1/iptv-download.git"
+REPO_URL="https://github.dwtxaqgb.eu.org/https://github.com/dwtxaqgb1/iptv-download.git"
 IMAGE_NAME="iptv-download"
 CONTAINER_NAME="iptv-download"
 
