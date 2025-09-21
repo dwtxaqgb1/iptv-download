@@ -2,7 +2,7 @@ version: '3'
 services:
   iptv-downloader:
     # 从仓库拉取镜像（替代本地构建）
-    image: github.com/dwtxaqgb1/iptv-downloader:latest
+    image: https://github.dwtxaqgb.eu.org/https://github.com/dwtxaqgb1/iptv-downloader:latest
     container_name: iptv-downloader
     restart: always
     environment:
