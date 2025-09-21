@@ -5,8 +5,6 @@ PROJECT_NAME="iptv-download"
 REPO_URL="https://github.com/dwtxaqgb1/iptv-download.git"
 IMAGE_NAME="iptv-download"
 CONTAINER_NAME="iptv-download"
-# 假设应用使用4567端口，可根据实际情况修改
-PORT=4567
 
 # 检查Docker是否安装
 if ! command -v docker &> /dev/null; then
