@@ -1,26 +1,18 @@
 version: '3'
 services:
   iptv-downloader:
-    # 本地构建镜像（无需拉取远程，避免网络问题）
-    build: .
-    # 容器名（方便后续管理）
+    # 从仓库拉取镜像（替代本地构建）
+    image: github.com/dwtxaqgb1/iptv-downloader:latest
     container_name: iptv-downloader
-    # 容器意外停止后自动重启
     restart: always
-    # 配置下载参数（=== 这里必须改你的信息 ===）
     environment:
+      # 保持原环境变量配置不变
       - TZ=Asia/Shanghai
-      # 1. 源文件下载链接（改成你的实际链接，比如1.m3u的链接）
-      - TASK_URL=https://xxx.com/1.m3u
-      # 2. 固定目标文件名（改成你要的名字，比如2.m3u）
-      - FIXED_FILE_NAME=2.m3u
-      # 3. 定时规则（例子：每天凌晨2点，改规则参考下方说明）
+      - TASK_URL=https://sub.ottiptv.cc/douyuyqk.m3u
+      - FIXED_FILE_NAME=douyu.m3u
       - TASK_CRON=0 2 * * *
-      # 可选参数（不用改则保持默认）
-      - TASK_DIR=/downloads  # 容器内保存目录（默认即可）
-      - OVERWRITE=true       # 每次下载覆盖旧文件（建议true）
-    # 本地目录挂载：下载的文件会保存在 ./files 下（即 /vol1/1000/docker/iptv-download/files）
+      - TASK_DIR=/downloads
+      - OVERWRITE=true
     volumes:
       - ./files:/downloads
-    # 网络模式（确保容器能联网下载）
     network_mode: bridge
